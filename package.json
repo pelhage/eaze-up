@@ -1,0 +1,22 @@
+{
+  "name": "eaze",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Patrick El-Hage",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.14.0",
+    "moment": "^2.14.1",
+    "nightmare": "^2.6.1",
+    "osmosis": "^1.1.0",
+    "textbelt": "0.0.3",
+    "x-ray": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.14.0"
+  }
+}
