@@ -1,12 +1,14 @@
 // Dependencies
 import Nightmare from 'nightmare'
 import axios from 'axios'
-import moment from 'moment'
+// Helper functions
+import createTextMessage from './lib/textMessage'
+import checkForStrains from './lib/strains'
 
 // Instances
 const nightmare = Nightmare({ show: true })
 
-const Clients = [
+const Stoners = [
   {
     firstName: 'Patrick',
     phoneNumber: 4159365087,
@@ -43,14 +45,8 @@ nightmare
     Stoners.forEach((stoner) => {
       const { firstName, phoneNumber, desiredStrains } = stoner
       // Regex for the client's strains
-      const userStrains = new RegExp(desiredStrains.join("|"), 'gi')
-      const strainsFound = []
-      // Go through each strain on Eaze and see if there's a match
-      eazeStrains.forEach((eazeStrain) => {
-        if (eazeStrain.match(userStrains)) {
-          strainsFound.push(eazeStrain)
-        }
-      })
+      const strainsFound = checkForStrains(desiredStrains, eazeStrains)
+
       // If the user's strains are available, add user to queue
       if (strainsFound.length) {
         const textMessage = createTextMessage(firstName, strainsFound)
@@ -79,25 +75,3 @@ nightmare
   .catch((error) => {
     console.error('Search failed:', error)
   })
-
-
-
-/**
- * createTextMessage - generates the text message string sent
- * to users
- *
- * @param  {String} firstName       recipients first name
- * @param  {Array} availableStrains requested strains available on eaze
- * @return {String} message         message for recipient
- */
-function createTextMessage(firstName, availableStrains) {
-  const dateTime = moment().format('MM/DD/YY')
-
-  let message = '\nHi ' + firstName +
-  ', the following strains are available today (' +
-  dateTime + ') on eazeup.com:\n'
-  availableStrains.forEach((strain) => {
-    message += '\n' + strain
-  })
-  return message
-}
