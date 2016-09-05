@@ -11,10 +11,12 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.14.0",
+    "kue": "^0.11.1",
     "moment": "^2.14.1",
     "nightmare": "^2.6.1",
     "osmosis": "^1.1.0",
     "textbelt": "0.0.3",
+    "twilio": "^2.10.0",
     "x-ray": "^2.3.0"
   },
   "devDependencies": {

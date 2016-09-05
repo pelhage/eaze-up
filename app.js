@@ -1,10 +1,14 @@
 // Dependencies
 import Nightmare from 'nightmare'
+// import kue from'kue'
+// Data & Helpers
 import Stoners from './data'
 import addToQueue from './lib/queue'
 import { sendTextMessage } from './lib/textMessage'
+
 // Instances
 const nightmare = Nightmare({ show: true })
+// const queue = kue.createQueue()
 
 // Begin Scraping
 nightmare
@@ -15,7 +19,6 @@ nightmare
   .type('form > input', '930 Pine Street, San Francisco, CA')
   .click('place-group > place-item')
   .wait('.product h2')
-  .wait(6000)
   .evaluate(() => {
     return [].slice.call(document.querySelectorAll('.product')).map((el) => {
       return el.querySelector('h2').innerText
@@ -26,6 +29,7 @@ nightmare
     console.log(eazeStrains)
     const messageQueue = Stoners.reduce(addToQueue(eazeStrains), [])
     messageQueue.forEach(sendTextMessage)
+    console.log(messageQueue);
   })
   .catch((error) => {
     console.error('Search failed:', error)

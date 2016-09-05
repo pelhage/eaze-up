@@ -1,13 +1,13 @@
 const Stoners = [
+  // {
+  //   firstName: 'Steve',
+  //   phoneNumber: +16508087017,
+  //   desiredStrains: ['Blue Dream', 'Sage']
+  // },
   {
     firstName: 'Patrick',
-    phoneNumber: 4159365087,
+    phoneNumber: +14159365087,
     desiredStrains: ['Blue Dream', 'Sage'],
-  },
-  {
-    name: 'Steve',
-    phoneNumber: 6508087017,
-    strains: ['Blue Dream', 'Sage']
   }
 ]
 
