@@ -1,4 +1,4 @@
-const Stoners = [
+const Patients = [
   // {
   //   firstName: 'Steve',
   //   phoneNumber: +16508087017,
@@ -11,4 +11,4 @@ const Stoners = [
   }
 ]
 
-export default Stoners
+export default Patients

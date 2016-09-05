@@ -2,7 +2,7 @@
 import Nightmare from 'nightmare'
 // import kue from'kue'
 // Data & Helpers
-import Stoners from './data'
+import Patients from './data'
 import addToQueue from './lib/queue'
 import { sendTextMessage } from './lib/textMessage'
 
@@ -27,7 +27,7 @@ nightmare
   .end()
   .then((eazeStrains) => {
     console.log(eazeStrains)
-    const messageQueue = Stoners.reduce(addToQueue(eazeStrains), [])
+    const messageQueue = Patients.reduce(addToQueue(eazeStrains), [])
     messageQueue.forEach(sendTextMessage)
     console.log(messageQueue);
   })
