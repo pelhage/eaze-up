@@ -6,7 +6,7 @@ const Stoners = [
   // },
   {
     firstName: 'Patrick',
-    phoneNumber: +14159365087,
+    phoneNumber: '+14159365087',
     desiredStrains: ['Blue Dream', 'Sage'],
   }
 ]
