@@ -1,0 +1,27 @@
+.App {
+  display: flex;
+  background: #5ed45e;
+  color: #fff;
+  font-size: 16px;
+  font-family: 'Helvetica';
+  height: 100vh;
+  flex-direction: column;
+
+  h1 {
+    align-self: center;
+    font-size: 2rem;
+    border: 1px solid black
+  }
+
+  .classone {
+    color: red;
+  }
+
+  input {
+    height: 35px;
+    background: blue;
+    flex-basis: 1;
+    border: 1px solid #000;
+  }
+
+}
