@@ -1,6 +1,8 @@
 import express from 'express'
+import path from 'path'
 const Router = express.Router()
 import bodyParser from 'body-parser'
+
 
 import chatMessage from './lib/sms-chat/chat-message'
 
@@ -12,7 +14,7 @@ Router.use(bodyParser.urlencoded({ extended: true }))
  * API
  */
 Router.get('/', (req, res) => {
-  res.send('Hello worlds')
+  res.sendFile(path.join(__dirname + '/index.html'))
 })
 // The chat bot interface:
 Router.post('/message', chatMessage)
