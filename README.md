@@ -47,7 +47,7 @@ You'll need to add a webhook to your Ngrok url in Twilio's Phone Numbers dashboa
 
 The POST endpoint being used by Twilios webhook in this app is `http://<ngrokurl>/message`
 
-## How It Works (Design Decisions)
+## How It Works
 A Scraper scrapes eaze for the day's featured strains
 
 Each strain is added to a job queue where it is processed to be added to the strain DB if not already added.
