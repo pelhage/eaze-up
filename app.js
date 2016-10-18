@@ -13,7 +13,7 @@ app.use('/', routes)
 import Scraper from './lib/scraper'
 import Cron from './lib/cron'
 
-//Scraper()
+Scraper()
 Cron.start()
 // Listen Up!
 app.listen(3000, ()=>{ console.log('Listening on 3000')})
