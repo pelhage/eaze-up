@@ -1,11 +1,11 @@
 # Eaze Up: Strain Notifier for Patients
 
-## Install
-### Dependencies
+## Dependencies
 * MongoDB
 * Ngrok
 * Twilio Account (with SMS webhooks pointed to Ngrok URL)
-### Install & Config
+
+## Install & Config
 ```bash
 npm install
 ```
