@@ -1,4 +1,4 @@
-# Eaze Up: Strain Notifier for Patients
+# Eaze Up: Strain Notifier & Chat Bot for Patients
 
 This project extends Eaze's functionality by providing patients with access to a strain watchlist, to be notified via SMS when their preferred strains are available for purchase
 
