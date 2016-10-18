@@ -11,8 +11,9 @@ mongoose.connect(configDB.url); // connect to DB
 import routes from './routes'
 app.use('/', routes)
 import Scraper from './lib/scraper'
-import Chron from './lib/chron'
+import Cron from './lib/cron'
 
-Scraper()
+//Scraper()
+Cron()
 // Listen Up!
 app.listen(3000, ()=>{ console.log('Listening on 3000')})
