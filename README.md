@@ -13,6 +13,11 @@ REMOVE <strain> - remove strain from watchlist
 MORE - list commands available to user
 ```
 
+## Table Of Contents
+* [Dependencies](#Dependencies)
+* [Install & Config](#Install & Config)
+* [Running Eaze Up Notifier](#Running Eaze Up Notifier))
+* [How It Works (Design Decisions)](#How It Works (Design Decisions)]
 
 ## Dependencies
 * MongoDB
@@ -40,4 +45,15 @@ MongoDB settings can be accessed and edited in `./config/database.js`
 You'll need to add a webhook to your Ngrok url in Twilio's Phone Numbers dashboard.
 
 The POST endpoint being used by Twilios webhook in this app is `http://<ngrokurl>/message`
+
+## How It Works (Design Decisions)
+A Scraper scrapes eaze for the day's featured strains
+
+Each strain is added to a job queue where it is processed to be added to the strain DB if not already added.
+
+Once the jobs are finished, Notifier queries the user table for all patients who are subscribed for notifications that also are watching strains that are featured (referred to as a cohort)
+
+Each patient and their details are added to a SMS job queue, which is later processed to send an SMS to each one via Twilio's API.
+
+The patient can also interact with a primitive chat bot, to add or remove strains from their watch list
 
