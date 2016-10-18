@@ -1,7 +1,7 @@
 import express from 'express'
 const Router = express.Router()
 import bodyParser from 'body-parser'
-import User from './lib/user/user-model'
+import Patient from './lib/patient/patient-model'
 // Middleware
 Router.use(bodyParser.json())
 Router.use(bodyParser.urlencoded({ extended: true }))
@@ -16,22 +16,22 @@ Router.get('/', (req, res) => {
 Router.post('/message', (req, res) => {
   // console.log('req', req.body);
   let twiml = new TwimlResponse()
-  var user = Patients
+  var patient = Patients
 
-  var userMsg = req.body.Body.trim().split(" ")
-  var userPhoneNumber = req.body.From
+  var patientMsg = req.body.Body.trim().split(" ")
+  var patientPhoneNumber = req.body.From
 
-  // console.log('userCommand', userCommand);
-  User.findOne({
-    'phoneNumber': userPhoneNumber
-  }, function(err, existingUser) {
+  // console.log('patientCommand', patientCommand);
+  Patient.findOne({
+    'phoneNumber': patientPhoneNumber
+  }, function(err, existingPatient) {
     if (err) { return next(err); }
 
-    var user = existingUser || new User({phoneNumber: userPhoneNumber})
+    var patient = existingPatient || new Patient({phoneNumber: patientPhoneNumber})
 
-    composeResponse(userMsg, user, twiml)
+    composeResponse(patientMsg, patient, twiml)
 
-    user.save(function(err) {
+    patient.save(function(err) {
       if (err) { console.log(err) }
     })
     res.writeHead(200, {'Content-Type': 'text/xml'})

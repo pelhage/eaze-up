@@ -25,9 +25,9 @@ describe('Text Message', () => {
 })
 
 describe('Strain Identifying', () => {
-  const userStrains = ['Blue Dream', 'OG Kush', 'OG Mama']
+  const patientStrains = ['Blue Dream', 'OG Kush', 'OG Mama']
   const retailerStrains = ['Blue Cat', 'OG Kush', 'Purple Haze']
-  const foundStrains = checkForStrains(userStrains, retailerStrains)
+  const foundStrains = checkForStrains(patientStrains, retailerStrains)
 
   it('should return an array', () => {
     foundStrains.should.be.an('array')
@@ -51,18 +51,18 @@ describe('SMS Queue', () => {
   let eazeStrains = ['Blue Crush', 'Host It', 'Blue Dream']
 
   it('should add someone who has a matching strain', () => {
-    let user = { firstName: 'Patrick', phoneNumber: 4159365087,
+    let patient = { firstName: 'Patrick', phoneNumber: 4159365087,
                   desiredStrains: ['Blue Dream', 'Sage'] }
 
-    addToQueue(eazeStrains)(queue, user)
+    addToQueue(eazeStrains)(queue, patient)
     queue.should.have.length(1)
     queue[0].should.have.all.keys(['firstName', 'textMessage', 'strainsFound', 'phoneNumber'])
     queue[0].strainsFound[0].should.equal('Blue Dream')
   })
 
   it('should not add someone who doesn\'t have a matching strain to the queue', () => {
-    let user2 = { firstName: 'John', phoneNumber: 2813308004, desiredStrains: ['None'] }
-    addToQueue(eazeStrains)(queue, user2)
+    let patient2 = { firstName: 'John', phoneNumber: 2813308004, desiredStrains: ['None'] }
+    addToQueue(eazeStrains)(queue, patient2)
     queue.should.have.length(1)
   })
 })
