@@ -3,16 +3,13 @@ import path from 'path'
 const Router = express.Router()
 import bodyParser from 'body-parser'
 
-
-import chatMessage from './lib/sms-chat/chat-message'
+import chatMessage from './lib/sms-chat/chatMessage'
 
 // Middleware
 Router.use(bodyParser.json())
 Router.use(bodyParser.urlencoded({ extended: true }))
 
-/*
- * API
- */
+// API
 Router.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/index.html'))
 })
