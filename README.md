@@ -14,7 +14,7 @@ MORE - list commands available to user
 ```
 
 ## Table Of Contents
-* [How It Works](#how-it-works]
+* [How It Works](#how-it-works)
 * [Dependencies](#dependencies)
 * [Install & Config](#install-&-config)
 * [Running Eaze Up Notifier](#running-eaze-up-notifier)
