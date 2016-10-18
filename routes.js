@@ -14,7 +14,7 @@ Router.use(bodyParser.urlencoded({ extended: true }))
 Router.get('/', (req, res) => {
   res.send('Hello worlds')
 })
-
+// The chat bot interface:
 Router.post('/message', chatMessage)
 
 export default Router
