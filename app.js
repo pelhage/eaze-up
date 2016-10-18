@@ -14,6 +14,6 @@ import Scraper from './lib/scraper'
 import Cron from './lib/cron'
 
 //Scraper()
-Cron()
+Cron.start()
 // Listen Up!
 app.listen(3000, ()=>{ console.log('Listening on 3000')})
