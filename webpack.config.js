@@ -28,7 +28,22 @@ module.exports = {
     {
       test:   /\.css$/,
       loader: "style!css-loader!postcss-loader"
+    },
+    {
+      test: /\.(jpe?g|png|gif|svg|mp4|webm)$/i,
+      loaders: [
+        'file?hash=sha512&digest=hex&name=[hash].[ext]',
+        'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+      ]
     }
+    // {
+    //   test: /\.html$/,
+    //   loader: 'html-loader?attrs[]=video:src'
+    // }, {
+    //   test: /\.mp4$/,
+    //   loader: 'url?limit=10000&mimetype=video/mp4'
+    // }
+
     // {
     //   test: /\.css$/,
     //   loader: 'style!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'

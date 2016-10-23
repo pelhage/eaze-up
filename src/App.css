@@ -1,30 +1,39 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Bungee+Inline');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Lilita+One|Montserrat');
+
 
 * {
   box-sizing: border-box;
 }
 html {
-  background: #5ed45e;
-  height: 100vh;
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', 'Helvetica', 'sans-serif';
+  font-size: 20px;
+  color: rgba(255, 255, 255, 1);
+  background: linear-gradient(rgba(2, 60, 2, 0.8), rgba(2, 60, 2, 0.8)),
+              rgba(0,0,0,0.55) url(./marijuana.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  /*align-items: flex-end;*/
 }
 .App {
   display: flex;
-
-  color: #12A4D7;
-  color: #fff;
-  font-size: 16px;
+  height: 100vh;
   font-family: 'Helvetica';
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
 
   h1 {
     text-align: center;
-    font-size: 5rem;
-    font-family: 'Bungee Inline', cursive;
-    color: rgba(0, 0, 0, 0.5);
+    font-size: 2.8rem;
+    font-family: 'Monteserrat', sans-serif;
     font-weight: 700;
   }
 
@@ -35,24 +44,54 @@ html {
     padding: 25px;
     border-radius: 10px;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     background: rgba(255, 255, 255, 0.5);
   }
   p {
     margin-top: 0;
-    font-size: 18px;
-    color: #444;
+    font-size: 25px;
   }
   input {
-    height: 50px;
     padding: 15px;
-    background: #fff;
+    background: rgba(255, 255, 255, 1);
     flex-basis: 1;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    font-size: 20px;
   }
-  input:focus {
+  button:focus, input:focus {
     outline: none;
   }
+  input, button {
+    width: 45%;
+    height: 60px;
+    border-radius: 35px;
+    border: 3px solid #5A4BF5;
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  button {
+    /*min-width: 150px;*/
+    padding: 0 35px;
+    cursor: pointer;
+    border: none;
+    background: #5A4BF5;
+    color: #fff;
+  }
+  .phone-number {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .phone-preview {
+    position: relative;
+  }
+  .phone-preview img {
+    display: block;
+    width: 300px;
+  }
+}
+video {
+  position: absolute;
+  top: 13%;
+  width: 259px;
+  left: 21px;
 }
