@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var precss = require('precss');
 var autoprefixer = require('autoprefixer');
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   devtool: 'eval',
@@ -20,7 +21,8 @@ module.exports = {
     },
     {
       test:   /\.css$/,
-      loader: "style!css-loader!postcss-loader"
+      loader: "style!css-loader!postcss-loader",
+      loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer!postcss')
     },
     {
       test: /\.(jpe?g|png|gif|svg|mp4|webm|html)$/i,
@@ -44,6 +46,9 @@ module.exports = {
 
     ]
   },
+  plugins: [
+    new ExtractTextPlugin('styles.css')
+  ],
   postcss: function() {
     return [precss, autoprefixer]
   }
