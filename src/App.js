@@ -13,7 +13,7 @@ const App = (props) => {
         <p>Track your favorite strains and get notified via SMS when they're available for purchase on eaze.</p>
         <p>Enter your phone number to start receiving texts!</p>
         <div className="phone-number">
-          <input placeholder="+1-415-555-555"/>
+          <input type="tel" placeholder="+1-415-555-555"/>
           <button>Get Started</button>
         </div>
 
