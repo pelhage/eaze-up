@@ -4,7 +4,7 @@ const Router = express.Router()
 import bodyParser from 'body-parser'
 
 import chatMessage from './lib/sms-chat/chatMessage'
-import welcomeMessage from './lib/sms-chat/welcomeMessage'
+import welcomeMessage from './lib/sms-notify/welcomeMessage'
 
 // Middleware
 Router.use(bodyParser.json())
