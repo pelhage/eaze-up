@@ -39,10 +39,10 @@ class App extends Component {
           <h1>Track Strains with Eaze</h1>
           <p>Track your favorite strains and get notified via SMS when they're available for purchase on eaze.</p>
           <p>Enter your phone number to start receiving texts!</p>
-          <form className="phone-number">
+          <div className="phone-number">
             <input type="tel" placeholder="+1-415-555-555" onChange={this.handlePhoneInput}/>
             <button onClick={this.onSubmit}>Get Started</button>
-          </form>
+          </div>
 
         </div>
         <div className="phone-preview">
