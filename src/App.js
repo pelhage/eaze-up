@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import phonePreview from './phonePreview.png'
-import phoneVideo from './phoneVideo.mp4'
+import phoneVideo from './phoneVideo2.mp4'
 import phoneVideoWebm from './phoneVideo.webm'
 
 const App = (props) => {
@@ -20,8 +20,7 @@ const App = (props) => {
       </div>
       <div className="phone-preview">
         <img src={phonePreview} />
-        <video autoPlay="true" muted="true" >
-          <source src={phoneVideoWebm} ></source>
+        <video autoPlay="true" muted="true" loop="true">
           <source src={phoneVideo} ></source>
         </video>
       </div>
