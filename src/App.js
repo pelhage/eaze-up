@@ -23,7 +23,7 @@ class App extends Component {
 
   onSubmit() {
     let { phoneNumber } = this.state
-    axios.post('138.68.20.241/welcome',
+    axios.post('http://138.68.20.241/welcome',
       { phoneNumber })
       .then((response) => {
         console.log(response)

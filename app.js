@@ -12,7 +12,7 @@ import routes from './routes'
 app.use('/', routes)
 import Scraper from './lib/scraper'
 import Cron from './lib/cron'
-
+// app.get('/poop', function(req, res) { res.send('Hi') })
 // Scraper()
 Cron.start()
 // Listen Up!
