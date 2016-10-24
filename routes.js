@@ -4,6 +4,7 @@ const Router = express.Router()
 import bodyParser from 'body-parser'
 
 import chatMessage from './lib/sms-chat/chatMessage'
+import welcomeMessage from './lib/sms-chat/welcomeMessage'
 
 // Middleware
 Router.use(bodyParser.json())
@@ -18,5 +19,7 @@ Router.get('/', (req, res) => {
 })
 // The chat bot interface:
 Router.post('/message', chatMessage)
+// Upon text request
+Router.post('/welcome', welcomeMessage)
 
 export default Router
