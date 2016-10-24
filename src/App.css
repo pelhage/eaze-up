@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway:900|Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Lilita+One|Montserrat');
 
-
 * {
   box-sizing: border-box;
   margin: 0;
 }
+
 html {
   margin: 0;
   padding: 0;
@@ -17,51 +17,55 @@ html {
   background-size: cover;
 }
 
-.intro {
-  display: flex;
-  flex-direction: column;
-  max-width: 600px;
-  /*align-items: flex-end;*/
-}
 .App {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 15px;
   font-family: 'Helvetica';
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 
   h1 {
     text-align: center;
     font-size: 2.8rem;
     font-family: 'Raleway';
     font-weight: 700;
+    margin-bottom: 15px;
   }
 
-  .phone-number-box {
-    display: flex;
-    height: 350px;
-    width: 600px;
-    padding: 25px;
-    border-radius: 10px;
-    flex-direction: column;
-    justify-content: space-between;
-    background: rgba(255, 255, 255, 0.5);
-  }
   p {
     margin-top: 0;
+    margin-bottom: 10px;
     font-size: 25px;
     font-weight: 200;
     line-height: 1.5;
   }
-  input {
-    padding: 15px;
-    background: rgba(255, 255, 255, 1);
-    flex-basis: 1;
+  .intro {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    @media (max-width: 600px) {
+      display: block;
+    }
   }
-  button:focus, input:focus {
-    outline: none;
+
+  .phone-number {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    @media (max-width: 500px) {
+      flex-direction: column;
+    }
+    @media (max-width: 600px) {
+      margin-bottom: 20px;
+    }
   }
+
   input, button {
     width: 45%;
     height: 60px;
@@ -70,31 +74,43 @@ html {
     font-size: 18px;
     text-align: center;
     text-transform: uppercase;
+    @media (max-width: 500px) {
+      width: 80%;
+      margin: 20px auto;
+      align-self: center;
+    }
   }
+
+  button:focus, input:focus {
+    outline: none;
+  }
+
+  input {
+    padding: 15px;
+    background: rgba(255, 255, 255, 1);
+    flex-basis: 1;
+  }
+
   button {
-    /*min-width: 150px;*/
     padding: 0 35px;
     cursor: pointer;
     border: none;
     background: #5A4BF5;
     color: #fff;
   }
-  .phone-number {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
+
   .phone-preview {
     position: relative;
+    img {
+      display: block;
+      width: 300px;
+    }
+    video {
+      position: absolute;
+      top: 13%;
+      width: 259px;
+      left: 21px;
+    }
   }
-  .phone-preview img {
-    display: block;
-    width: 300px;
-  }
-}
-video {
-  position: absolute;
-  top: 13%;
-  width: 259px;
-  left: 21px;
+
 }
