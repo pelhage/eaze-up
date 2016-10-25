@@ -22,15 +22,17 @@ const App = (props) => {
 export default App
 
 /**
-IMPROVE APP WITH THE FOLLOWING
+IMPROVE APP Front End WITH THE FOLLOWING
 
 PhoneInput can have methods or API info passed down as props to be more re-usable
 
 PhonePreview can have screenshots and video passed down as props to be more re-usable
 
 PhonePreview and PhoneInput container styles should be decoupled from the components
-so that their responsiveness is a reflection of the container they are in
+so that their responsiveness is a reflection of the container they live in
 
 Use webpack plugin that will allow import paths to use index.js
+
+Use environment variables for API Urls/ Place API Urls in a config file
 
 **/
