@@ -1,0 +1,65 @@
+h1 {
+  text-align: center;
+  font-size: 2.8rem;
+  font-family: 'Raleway';
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 200;
+  line-height: 1.3;
+}
+
+input, button {
+  width: 45%;
+  height: 60px;
+  border-radius: 35px;
+  border: 3px solid #5A4BF5;
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  @media (max-width: 500px) {
+    width: 80%;
+    margin: 20px auto;
+    align-self: center;
+  }
+}
+
+button:focus, input:focus {
+  outline: none;
+}
+
+input {
+  padding: 15px;
+  background: rgba(255, 255, 255, 1);
+  flex-basis: 1;
+}
+
+button {
+  padding: 0 35px;
+  cursor: pointer;
+  border: none;
+  background: #5A4BF5;
+  color: #fff;
+}
+
+.phone-number {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
+  @media (max-width: 600px) {
+    margin-bottom: 20px;
+  }
+}
+
+.phone-error {
+  height: 25px;
+  color: rgba(121, 255, 100, 0.9)
+}

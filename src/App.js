@@ -1,59 +1,36 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './App.css'
-import phonePreview from './phonePreview.png'
-import phoneVideo from './phoneVideo2.mp4'
-import phoneVideoWebm from './phoneVideo.webm'
 
-import axios from 'axios'
+import IntroSection from './IntroSection/IntroSection'
+import PhoneInput from './PhoneInput/PhoneInput' // use webpack plugin to resolve to index
+import PhonePreview from './PhonePreview/PhonePreview' // use webpack plugin to resolve to index
 
-class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      phoneNumber: ''
-    }
-    this.onSubmit = this.onSubmit.bind(this)
-    this.handlePhoneInput = this.handlePhoneInput.bind(this)
-  }
-
-  handlePhoneInput(e) {
-    let phoneNumber = e.target.value
-    this.setState({phoneNumber})
-  }
-
-  onSubmit() {
-    let { phoneNumber } = this.state
-    axios.post('http://138.68.20.241/welcome',
-      { phoneNumber })
-      .then((response) => {
-        console.log(response)
-      }).catch((err) => {
-        console.log(err);
-      })
-      this.setState({phoneNumber: ''})
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <div className="intro">
-          <h1>Track Strains with Eaze</h1>
-          <p>Track your favorite strains and get notified via SMS when they're available for purchase on eaze.</p>
-          <p>Enter your phone number to start receiving texts!</p>
-          <div className="phone-number">
-            <input type="tel" placeholder="+1-415-555-555" onChange={this.handlePhoneInput}/>
-            <button onClick={this.onSubmit}>Get Started</button>
-          </div>
-
-        </div>
-        <div className="phone-preview">
-          <img src={phonePreview} />
-          <video autoPlay="true" muted="true" loop="true">
-            <source src={phoneVideo} ></source>
-          </video>
-        </div>
-      </div>
-    )
-  }
+const App = (props) => {
+  return (
+    <div className="App">
+      <IntroSection>
+        <h1>Track Strains with Eaze</h1>
+        <p>Track your favorite strains and get notified via SMS when they're available for purchase on eaze.</p>
+        <p>Enter your phone number to start receiving texts!</p>
+        <PhoneInput />
+      </IntroSection>
+      <PhonePreview />
+    </div>
+  )
 }
+
 export default App
+
+/**
+IMPROVE APP WITH THE FOLLOWING
+
+PhoneInput can have methods or API info passed down as props to be more re-usable
+
+PhonePreview can have screenshots and video passed down as props to be more re-usable
+
+PhonePreview and PhoneInput container styles should be decoupled from the components
+so that their responsiveness is a reflection of the container they are in
+
+Use webpack plugin that will allow import paths to use index.js
+
+**/

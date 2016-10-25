@@ -1,0 +1,13 @@
+.phone-preview {
+  position: relative;
+  img {
+    display: block;
+    width: 300px;
+  }
+  video {
+    position: absolute;
+    top: 13%;
+    width: 259px;
+    left: 21px;
+  }
+}

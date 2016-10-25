@@ -1,0 +1,8 @@
+.intro {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  @media (max-width: 600px) {
+    display: block;
+  }
+}
