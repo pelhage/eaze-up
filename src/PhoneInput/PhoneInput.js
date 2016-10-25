@@ -27,10 +27,10 @@ class PhoneInput extends Component {
       { phoneNumber })
       .then((response) => {
         console.log(response)
+        this.setState({phoneNumber: '', error: ''})
       }).catch((err) => {
         console.log(err);
       })
-      this.setState({phoneNumber: '', error: ''})
   }
 
   renderError() {
