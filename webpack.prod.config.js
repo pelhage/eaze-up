@@ -21,16 +21,34 @@ module.exports = {
     },
     {
       test:   /\.css$/,
-      loader: "style!css-loader!postcss-loader",
-      loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer!postcss')
+      loader: "style!css-loader!postcss-loader"//,
+//      loader: ExtractTextPlugin.extract('style', 'style!css-loader!postcss-loaders')
     },
-    {
+      {
+        test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)(\?.*)?$/,
+        include: path.join(__dirname, 'src'),
+        loader: 'file',
+        query: {
+          name: 'media/[name].[hash:8].[ext]'
+        }
+      },
+/*    {
       test: /\.(jpe?g|png|gif|svg|mp4|webm|html)$/i,
+      include: "./src",
       loaders: [
         'file?hash=sha512&digest=hex&name=[hash].[ext]',
         'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
       ]
-    }
+    }, */
+      {
+        test: /\.(mp4|webm)(\?.*)?$/,
+        include: path.join(__dirname, 'src'),
+        loader: 'url',
+        query: {
+          limit: 10000,
+          name: 'media/[name].[hash:8].[ext]'
+        }
+      }
     // {
     //   test: /\.html$/,
     //   loader: 'html-loader?attrs[]=video:src'
