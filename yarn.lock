@@ -870,7 +870,7 @@ babel-preset-stage-3@^6.17.0:
     babel-plugin-transform-exponentiation-operator "^6.3.13"
     babel-plugin-transform-object-rest-spread "^6.16.0"
 
-babel-register, babel-register@^6.18.0:
+babel-register@^6.18.0:
   version "6.18.0"
   resolved "https://registry.yarnpkg.com/babel-register/-/babel-register-6.18.0.tgz#892e2e03865078dd90ad2c715111ec4449b32a68"
   dependencies:
@@ -1826,13 +1826,6 @@ ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
-electron, electron@^1.4.4:
-  version "1.4.4"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-1.4.4.tgz#86000bce15e06cadc3566cb7c86122590dee54a5"
-  dependencies:
-    electron-download "^3.0.1"
-    extract-zip "^1.0.3"
-
 electron-download@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/electron-download/-/electron-download-3.0.1.tgz#27045028ee78b3b3dca9fdb35d4bb1262afa4d29"
@@ -1846,6 +1839,13 @@ electron-download@^3.0.1:
     rc "^1.1.2"
     semver "^5.3.0"
     sumchecker "^1.2.0"
+
+electron@^1.4.4:
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-1.4.4.tgz#86000bce15e06cadc3566cb7c86122590dee54a5"
+  dependencies:
+    electron-download "^3.0.1"
+    extract-zip "^1.0.3"
 
 emojis-list@^2.0.0:
   version "2.1.0"
@@ -3773,7 +3773,7 @@ nib@~1.1.2:
   dependencies:
     stylus "0.54.5"
 
-nightmare:
+nightmare@^2.8.1:
   version "2.8.1"
   resolved "https://registry.yarnpkg.com/nightmare/-/nightmare-2.8.1.tgz#c7d56e4b37d16978fc853ecb3acc976c315e16d9"
   dependencies:
