@@ -46,7 +46,12 @@ class PhoneInput extends Component {
           {this.renderError()}
         </div>
         <div className="phone-number">
-          <input type="tel" placeholder="+1-415-555-555" onChange={this.handlePhoneInput}/>
+          <input
+            type="tel"
+            placeholder="+1-415-555-555"
+            value={this.state.phoneNumber}
+            onChange={this.handlePhoneInput}
+            />
           <button onClick={this.onSubmit}>Get Started</button>
         </div>
       </div>
